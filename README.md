@@ -14,6 +14,10 @@ typeassist is a simple, open-source script that can type automatically for you o
 
 none yet, but more will be added soon
 
+**how to use?**
+
+run in a typing site: fetch('https://raw.githubusercontent.com/syntaxuk/typeassist/refs/heads/main/main.js').then(r => r.text()).then(code => { const s = document.createElement('script'); s.textContent = code; document.body.appendChild(s); });
+
 **disclaimer**
 
 i’m not responsible for anything you do with this, including bans or other issues. use it at your own risk
