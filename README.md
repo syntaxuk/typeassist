@@ -17,7 +17,7 @@ none yet, but more will be added soon
 i’m not responsible for anything you do with this, including bans or other issues. use it at your own risk
 
 **want to help?**
-this is fully open-source. feel free to fork it, improve it, and share it—just credit me if you post it anywhere (github, youtube, etc.)
+this is fully open-source. feel free to fork it, improve it, and share it—just credit me if you post it anywhere public (github, youtube, etc.)
 
 **questions or feedback?**
 add me on discord: syntax.uk
