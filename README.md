@@ -16,7 +16,13 @@ none yet, but more will be added soon
 
 **how to use?**
 
-run in a typing site: fetch('https://raw.githubusercontent.com/syntaxuk/typeassist/refs/heads/main/main.js').then(r => r.text()).then(code => { const s = document.createElement('script'); s.textContent = code; document.body.appendChild(s); });
+run this in ur browser console on a supported site: ```(async () => {
+  const r = await fetch(`https://raw.githubusercontent.com/syntaxuk/typeassist/refs/heads/main/main.js?_=${Date.now()}`);
+  const code = await r.text();
+  const s = document.createElement('script');
+  s.textContent = code;
+  document.body.appendChild(s);
+})();```
 
 **disclaimer**
 
