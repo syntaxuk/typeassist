@@ -28,6 +28,8 @@ This project is fully open-source. Feel free to fork, improve, and share—but c
 
 # Questions or Feedback
 
-Discord: syntax.uk
+If you have any feedback or questions, my discord is: syntax.uk
+
+# Optional stuff
 
 Join the vortexium server (my long-time project) if you want to: https://discord.gg/GbBDxCT9cP .
