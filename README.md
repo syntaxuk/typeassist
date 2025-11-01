@@ -30,4 +30,4 @@ This project is fully open-source. Feel free to fork, improve, and share—but c
 
 Discord: syntax.uk
 
-Join the server for discussion, support, and updates.
+Join the vortexium server (my long-time project) if you want to: https://discord.gg/GbBDxCT9cP .
