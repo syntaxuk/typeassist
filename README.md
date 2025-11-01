@@ -1,38 +1,33 @@
-# typeassist
+# TypeAssist for TypeRacer
 
-typeassist is a simple, open-source script that can type automatically for you on certain sites. it’s just a small helper—nothing complicated.
+TypeAssist is a lightweight, open-source script that can automatically type for you on TypeRacer. It’s a simple helper—nothing complicated.
 
-# how it works
+# How it works
 
-1. paste the script into your console on a typing site
+1. Paste the script into your browser console while on TypeRacer.com.
 
-2. it checks the URL to see which site you’re on
+2. The script detects the site and activates the TypeAssist interface.
 
-3. if the site is supported, it brings up the gui if not, it’ll tell you it’s not supported
+3. Once active, it can type automatically for you in races.
 
-# supported sites
+# Supported sites
 
-none yet, but more will be added soon
+TypeRacer.com (more sites may be added later)
 
-# how to use?
+# How to use
 
-run this in ur browser console on a supported site: ```(async () => {
-  const r = await fetch(`https://raw.githubusercontent.com/syntaxuk/typeassist/refs/heads/main/main.js?_=${Date.now()}`);
-  const code = await r.text();
-  const s = document.createElement('script');
-  s.textContent = code;
-  document.body.appendChild(s);
-})();```
+Run ``initialize.js`` from the files in ur browser console on the site typeracer.com.
 
-# disclaimer
+# Disclaimer
 
-i’m not responsible for anything you do with this, including bans or other issues. use it at your own risk
+Use at your own risk. I am not responsible for bans or any other issues resulting from using this script.
 
-# want to help?
+# Contribute
 
-this is fully open-source. feel free to fork it, improve it, and share it—just credit me if you post it anywhere public (github, youtube, etc.)
+This project is fully open-source. Feel free to fork, improve, and share—but credit me if you post it publicly (GitHub, YouTube, etc.).
 
-# questions or feedback?
+# Questions or Feedback
 
-add me on discord: syntax.uk
-or join the server: https://discord.gg/GbBDxCT9cP
+Discord: syntax.uk
+
+Join the server for discussion, support, and updates.
