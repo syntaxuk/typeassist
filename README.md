@@ -17,7 +17,9 @@ TypeRacer.com (more sites may be added later)
 # How to use
 
 1. Install the tampermonkey extension. (https://www.tampermonkey.net/)
-2. Install the userscript ()
+2. Install the userscript (https://greasyfork.org/en/scripts/554471-typeassist-v0-1-0-beta)
+3. Open https://typeracer.com
+4. Ur done! The ui should show up.
 
 # Disclaimer
 
