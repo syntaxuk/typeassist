@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.1.1
 // @description  A sleek, lightweight typing assistant for TypeRacer.
-// @author       syntax.uk (modified by you)
+// @author       syntax.uk
 // @match        *://typeracer.com/*
 // @match        *://*.typeracer.com/*
 // @grant        none
