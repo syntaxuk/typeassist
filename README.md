@@ -16,7 +16,8 @@ TypeRacer.com (more sites may be added later)
 
 # How to use
 
-Run ``initialize.js`` from the files in ur browser console on the site typeracer.com.
+1. Install the tampermonkey extension. (https://www.tampermonkey.net/)
+2. Install the userscript ()
 
 # Disclaimer
 
