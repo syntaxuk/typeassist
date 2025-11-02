@@ -1,4 +1,3 @@
-
 // ==UserScript==
 // @name         TypeAssist v0.1.0 BETA
 // @namespace    http://tampermonkey.net/
@@ -21,7 +20,6 @@
         currentTab: 'main',
         error: '',
         typingInterval: null,
-        statsInterval: null,
         observer: null,
         position: { x: 25, y: 25 },
         isDragging: false,
@@ -31,68 +29,6 @@
             wpm: 95,
         }
     };
-
-    function injectLoader() {
-        const css = `
-            #typeassist-loader {
-                position: fixed;
-                top: 25px;
-                left: 25px;
-                width: 320px;
-                padding: 24px;
-                background-color: rgba(28, 28, 30, 0.85);
-                border: 1px solid rgba(80, 80, 85, 0.7);
-                border-radius: 16px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-                font-family: 'Inter', -apple-system, sans-serif;
-                z-index: 99998;
-                color: #f2f2f7;
-                display: flex;
-                align-items: center;
-                gap: 15px;
-                backdrop-filter: blur(12px) saturate(180%);
-                -webkit-backdrop-filter: blur(12px) saturate(180%);
-            }
-            .ta-spinner {
-                width: 24px;
-                height: 24px;
-                border: 3px solid #4a4a4f;
-                border-top-color: #f2f2f7;
-                border-radius: 50%;
-                animation: ta-spin 1s linear infinite;
-                flex-shrink: 0;
-            }
-            #typeassist-loader h3 {
-                margin: 0;
-                font-size: 16px;
-                font-weight: 600;
-            }
-            #typeassist-loader p {
-                margin: 0;
-                font-size: 13px;
-                color: #a0a0a5;
-            }
-            @keyframes ta-spin {
-                to { transform: rotate(360deg); }
-            }
-        `;
-        const styleSheet = document.createElement("style");
-        styleSheet.id = "typeassist-loader-style";
-        styleSheet.type = "text/css";
-        styleSheet.innerText = css;
-        document.head.appendChild(styleSheet);
-
-        const html = `
-            <div id="typeassist-loader">
-                <div class="ta-spinner"></div>
-                <div>
-                    <h3>TypeAssist</h3>
-                    <p>Waiting for race to load...</p>
-                </div>
-            </div>
-        `;
-        document.body.insertAdjacentHTML('beforeend', html);
-    }
 
     function saveSettings() {
         try {
@@ -141,32 +77,6 @@
         return { fullText, completedText };
     }
 
-    function updateRaceStats() {
-        const charsLeftEl = document.getElementById('stats-chars-left');
-        if (!charsLeftEl) return;
-
-        if (!state.isTyping) {
-            charsLeftEl.textContent = '--';
-            return;
-        }
-
-        const { inputField } = getSelectors();
-        if (!inputField) return;
-
-        const { fullText, completedText } = getRaceText();
-        const currentInput = inputField.value;
-
-        if (fullText === "") {
-            charsLeftEl.textContent = 'N/A';
-            return;
-        }
-
-        const typedLength = completedText.length + currentInput.length;
-        const charsLeft = Math.max(0, fullText.length - typedLength);
-
-        charsLeftEl.textContent = charsLeft;
-    }
-
     function startTyping() {
         if (state.isTyping) return;
 
@@ -185,8 +95,6 @@
         state.isTyping = true;
         console.log(`Typing started at ${state.settings.wpm} WPM.`);
         updateUI();
-        state.statsInterval = setInterval(updateRaceStats, 500);
-        updateRaceStats();
         setError("");
 
         const avgWordLength = 5;
@@ -246,15 +154,12 @@
 
     function stopTyping() {
         clearInterval(state.typingInterval);
-        clearInterval(state.statsInterval);
         state.typingInterval = null;
-        state.statsInterval = null;
         if (state.isTyping) {
              console.log('Typing stopped.');
         }
         state.isTyping = false;
         updateUI();
-        updateRaceStats();
     }
 
     function setError(message) {
@@ -494,7 +399,7 @@
             }
 
             .typeassist-tab-content {
-                display: grid;
+                display: grid; 
                 gap: 24px;
             }
             #tab-misc {
@@ -578,21 +483,6 @@
             #typeassist-start-btn.active { background-color: var(--ta-danger); }
             #typeassist-start-btn.active:hover { background-color: var(--ta-danger-hover); }
 
-            #typeassist-stats {
-                display: flex;
-                justify-content: center;
-                background: var(--ta-input-bg);
-                padding: 12px;
-                border-radius: 10px;
-            }
-            #typeassist-stats > div {
-                font-size: 13px;
-                color: var(--ta-text-secondary);
-            }
-            #typeassist-stats > div span {
-                font-weight: 600;
-                color: var(--ta-text-primary);
-            }
             .typeassist-link-btn {
                 width: 100%; padding: 10px;
                 font-size: 14px; font-weight: 500;
@@ -645,7 +535,7 @@
                             <button class="typeassist-tab active" data-tab="main">${icons.zap} Main</button>
                             <button class="typeassist-tab" data-tab="misc">${icons.misc} Misc</button>
                         </div>
-
+                        
                         <div id="tab-main" class="typeassist-tab-content">
                             <div id="typeassist-captcha-warning">Warning! WPM &gt; 100. Typeracer requires a captcha for scores above 100wpm.</div>
                             <div class="typeassist-control">
@@ -657,10 +547,6 @@
                                     </div>
                                 </label>
                                 <input type="range" id="typeassist-wpm-slider" class="typeassist-slider" min="20" max="300" value="95" />
-                            </div>
-
-                            <div id="typeassist-stats">
-                                <div>Chars Left: <span id="stats-chars-left">--</span></div>
                             </div>
 
                             <button id="typeassist-start-btn">Start</button>
