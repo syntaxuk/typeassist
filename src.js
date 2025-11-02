@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         TypeAssist v0.1.0 BETA
+// @name         TypeAssist v0.1.1 BETA
 // @namespace    http://tampermonkey.net/
-// @version      0.1.0
+// @version      0.1.1
 // @description  A sleek, lightweight typing assistant for TypeRacer.
 // @author       syntax.uk (modified by you)
 // @match        *://typeracer.com/*
@@ -522,7 +522,7 @@
             <div id="typeassist-container">
                 <div id="typeassist-header">
                     <div id="typeassist-title-group">
-                        <h3>TypeAssist <span id="typeassist-version">v0.1.0 BETA</span></h3>
+                        <h3>TypeAssist <span id="typeassist-version">v0.1.1 BETA</span></h3>
                     </div>
                     <div id="typeassist-header-controls">
                          <button id="typeassist-toggle" title="Toggle UI">${icons.chevron}</button>
