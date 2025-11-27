@@ -29,10 +29,4 @@ Use at your own risk. I am not responsible for bans or any other issues resultin
 
 This project is fully open-source. Feel free to fork, improve, and share—but credit me if you post it publicly (GitHub, YouTube, etc.).
 
-# Questions or Feedback
 
-If you have any feedback or questions, my discord is: syntax.uk
-
-# Optional stuff
-
-Join the vortexium server (my long-time project) if you want to: https://discord.gg/GbBDxCT9cP .
